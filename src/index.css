@@ -7,52 +7,38 @@
     @apply border-border/20;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-bold;
     font-feature-settings: "rlig" 1, "calt" 1;
   }
 }
 
 @layer components {
-  .bauhaus-grid {
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: repeat(8, 1fr);
-    gap: 1rem;
-    min-height: 100vh;
-    position: relative;
+  .glass-card {
+    @apply bg-white/10 backdrop-blur-md border border-white/20 rounded-xl shadow-lg;
   }
   
-  .diagonal-text {
-    transform: rotate(-15deg);
-    transform-origin: center;
+  .glass-nav {
+    @apply bg-white/5 backdrop-blur-xl border-b border-white/10;
   }
   
-  .shimmer-effect {
-    background: linear-gradient(
-      90deg,
-      transparent,
-      rgba(255, 255, 255, 0.4),
-      transparent
-    );
-    animation: shimmer 2s infinite;
+  .glass-button {
+    @apply bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg hover:bg-white/20 transition-all duration-300;
   }
   
-  .glass-morphism {
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+  .dashboard-grid {
+    @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6;
   }
   
-  .yoga-card {
-    @apply bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2;
-    background: linear-gradient(135deg, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.7) 100%);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255,255,255,0.3);
+  .metric-card {
+    @apply glass-card p-6 hover:bg-white/15 transition-all duration-300;
   }
   
-  .pose-accuracy-bar {
-    @apply h-2 bg-gradient-to-r from-red-400 via-yellow-400 to-green-400 rounded-full;
-    background-size: 100% 100%;
+  .text-bold-black {
+    @apply text-black font-black;
+  }
+  
+  .text-semi-black {
+    @apply text-gray-900 font-bold;
   }
 }
 
@@ -62,15 +48,15 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: #f1f1f1;
+  background: rgba(255, 255, 255, 0.1);
   border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(45deg, #4AD295, #22c55e);
+  background: rgba(255, 255, 255, 0.3);
   border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(45deg, #22c55e, #16a34a);
+  background: rgba(255, 255, 255, 0.5);
 }

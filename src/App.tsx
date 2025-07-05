@@ -11,7 +11,7 @@ import Navbar from './components/Navbar'
 function App() {
   return (
     <Router>
-      <div className="min-h-screen bg-gradient-to-br from-green-50 via-white to-blue-50">
+      <div className="min-h-screen bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50">
         <Navbar />
         <motion.main
           initial={{ opacity: 0 }}
